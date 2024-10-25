@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pet Clinic | Links</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/superfish.js"></script>
+<script>
+$(function(){
+	function equalHeight(group) {
+		var tallest = 0;
+		group.each(function() {
+			var thisHeight = $(this).height();
+			if(thisHeight > tallest) {
+				tallest = thisHeight;
+			}
+		});
+		group.height(tallest);
+	}	
+	equalHeight($(".box-1 .inner"));
+})
+</script>
+<header>
+    <div class="inner">
+      <h1 class="logo"><a href="index.html">PetCare Pro</a></h1>
+      <div class="fright">
+        <div class="header-meta">
+          <form action="#" id="search-form" method="post">
+            <input type="text" onBlur="if(this.value==''){this.value='search'}" onFocus="if(this.value=='search'){this.value=''}" value="search" name="search">
+            <a class="search-form-submit"></a>
+          </form>
+          <div class="col-elem"> Have a problem with your pet?<br>
+            Call us now: <span class="phone"> 8991154210 </span> </div>
+        </div>
+        <nav>
+          <ul class="sf-menu">
+            <li class="current"><a href="index.html">main</a></li>
+            <li><a href="about.html">about</a></li>
+            <li> <a href="services.html">services</a>
+              <ul>
+                <li><a href="subs.html">Subscriptions</a></li>
+              </ul>
+            </li>
+            <li><a href="links.html">links</a></li>
+            <li><a href="contacts.html">contacts</a></li>
+          </ul>
+        </nav>
+  </header>
+  <body>
+    <!-- Contenedor de PayPal -->
+    <section id="content">
+        <div class="container_24">
+            <div class="card">
+                <img src="images/subscription-image.png" alt="Imagen de suscripción" class="card-image">
+                <div class="card-content">
+                    <h3>Suscripción mensual a PetCare Pro</h3>
+                    <p>Disfruta de beneficios exclusivos y el mejor cuidado para tu mascota por solo $9.99 al mes. Elige nuestra suscripción mensual y recibe atención personalizada para tu fiel compañero.</p>
+                    <!-- PayPal Subscription Button -->
+                    <div id="paypal-button-container" class="button-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Incluir el SDK de PayPal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ASap-aJ9VB53OVH0mnyt5dj9iqS8RErdD7uj7Hg-iGBMFvoTK-xtbz0vcC-N7__5eAnljJ5vRx66JKwR&currency=USD"></script>
+
+    <script>
+        // Renderiza el botón de PayPal
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '50.00' // Monto que se va a pagar
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Pago completado por ' + details.payer.name.given_name);
+                    console.log(details);  // Aquí puedes ver la respuesta de PayPal
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+    <footer>
+        <div class="copyright"> &copy; 2012 <strong class="footer-logo">Pet clinic</strong>
+          <div>Website Template by <a target="_blank" href="http://www.templatemonster.com/">TemplateMonster.com</a></div>
+        </div>
+        <ul class="social-list">
+          <li><a href="#"><img src="images/social-link-1.jpg" alt=""></a></li>
+          <li><a href="#"><img src="images/social-link-2.jpg" alt=""></a></li>
+          <li><a href="#"><img src="images/social-link-3.jpg" alt=""></a></li>
+          <li><a href="#"><img src="images/social-link-4.jpg" alt=""></a></li>
+        </ul>
+      </footer>
+</body>
+</html>

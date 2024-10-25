@@ -693,3 +693,52 @@ footer a {
 .social-list li a:hover img {
 	opacity:0.5;
 }
+/* Estilos para la tarjeta de suscripción */
+.container_24 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.card-image {
+    width: 50%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Estilos para centrar el botón de PayPal */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
