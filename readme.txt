@@ -32,7 +32,21 @@
    +++ IMPORTANT NOTICE +++
 
    TemplateMonster doesn't provide support services on free templates - including this one. We only provide support for the products that are being purchased from TemplateMonster.
-   Our free templates are produced according to the latest web standards and we�ve been trying to make the process of working with them as easy as possible, so for people with minimum web develpment 
+   Our free templates are produced according to the latest web standards and we’ve been trying to make the process of working with them as easy as possible, so for people with minimum web develpment 
    experience it should be easy to work with them. 
+
++++ SET UP AND USE +++
+
+We first registered for a developer account on the PayPal Developer website in order to configure PayPal's API for my website.
+We created a new app from the Dashboard under "My Apps & Credentials," gave it a name, and selected either production or sandbox as the environment.
+In order to link our website to PayPal, this setup gave us a Client ID and a Secret.
+
+We created a product for our business and then defined a plan with information like monthly payment, pricing, and currency because our service offers
+a monthly subscription. We could have included a free trial as well. Every plan creates a distinct plan ID, which we use to activate subscriptions on
+our website.
+
+We used the link https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&vault=true&intent=subscription to add the PayPal JavaScript SDK to the header
+of our HTML page for integration, replacing "YOUR_CLIENT_ID" with our real Client ID. This enables us to add buttons for payments and subscriptions 
+to our website.
 
    
